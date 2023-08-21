@@ -31,7 +31,7 @@ export default async function Home() {
     <>
       <AuthButtonServer />
       <NewTweet />
-      {tweets?.map((tweet) => (
+      {tweets.map((tweet) => (
         <div className="border" key={tweet.id}>
           <p>
             {tweet.author.name} {tweet.author.username}
