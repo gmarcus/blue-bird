@@ -14,7 +14,7 @@ export default async function Home() {
   }
 
   // We have a session, so let's show some tweets
-  const { data: tweets } = await supabase.from('tweets').select();
+  const { data: tweets } = await supabase.from('tweets').select('*, profiles(*)')
 
   return (
     <>
