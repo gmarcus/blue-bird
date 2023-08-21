@@ -1,12 +1,11 @@
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+import { createServerActionClient } from "@supabase/auth-helpers-nextjs"
 import { cookies } from "next/headers"
-import { title } from "process"
 
 export default function NewTweet() {
 
     const addTweet = async (formData: FormData) => {
         'use server'
-        const supabase = createServerComponentClient<Database>({ cookies })
+        const supabase = createServerActionClient<Database>({ cookies })
 
         const title = String(formData.get("title"))
 
